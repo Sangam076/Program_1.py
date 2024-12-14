@@ -1,0 +1,28 @@
+class calci:
+    def __init__(self, a:float, b:float, op:str):
+        self.a = a
+        self.b = b
+        self.op = op
+    
+    def calc(self):
+        if self.op == 'addition':
+            return self.a + self.b
+        elif self.op == 'subtraction':
+            return self.a - self.b
+        elif self.op == 'multiplication':
+            return self.a * self.b
+        elif self.op == 'division':
+            if self.b != 0:
+                return self.a / self.b
+            else:
+                return 'Error: Division by zero'
+        else:
+            return 'Invalid op'
+
+a = float(input("Enter first value "))
+b = float(input("Enter second value "))
+op = input("Enter operation ")
+
+cal = calci(a, b, op)
+result = cal.calc()
+print("The answer is ", result)
